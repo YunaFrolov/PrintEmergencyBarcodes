@@ -1,0 +1,690 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <meta charset=utf-8 />
+
+
+    <title></title>
+
+    <script type='text/javascript'>
+        $(function () {
+
+
+            $("#edate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: Date.parse("1900-01-01"),
+                maxDate: Date.parse("2100-01-01"),
+                yearRange: "c-1:c+10",
+                dateFormat: 'dd/mm/yy'
+            });
+            $("#bdate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: Date.parse("1900-01-01"),
+                maxDate: Date.parse("2100-01-01"),
+                yearRange: "c-1:c+10",
+                dateFormat: 'dd/mm/yy'
+            });
+        });
+    </script>
+
+
+    <link href="css/redmond/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            height: 100%;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .style1 {
+            width: 100%;
+        }
+
+        .style2 {
+            height: 25px;
+            text-align: right;
+        }
+
+        #Text1 {
+            width: 469px;
+            height: 84px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        .style3 {
+            color: #075CAA;
+            font-size: 18px;
+            font-family: Arial;
+            direction: rtl;
+        }
+
+        #Text6 {
+            width: 469px;
+            height: 84px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        #Text7 {
+            width: 469px;
+            height: 84px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        #Text8 {
+            width: 469px;
+            height: 84px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        #Text9 {
+            width: 469px;
+            height: 84px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        .style4 {
+            font-family: Tahoma;
+            color: #666666;
+            font-size: 12pt;
+            text-align: right;
+        }
+
+        #rcorners2 {
+            border-radius: 15px 50px 30px;
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        input[type=text], input[type=date], input[type=time], .datalist {
+            width: 90%;
+            padding: 8px 8px;
+            margin: 8px 8px;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            border-radius: 5px 20px 10px;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+            input[type=text]:focus, input[type=date]:focus, input[type=time]:focus, .datalist:focus {
+                border: 3px solid #555;
+            }
+
+        select {
+            width: 90%;
+            padding: 8px 8px;
+            margin: 8px 8px;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            border-radius: 5px 20px 10px;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type="radio"] {
+            margin: 4px 0 0;
+            margin-top: 1px \9;
+            line-height: normal;
+        }
+
+            input[type="radio"]:focus {
+                outline: 5px auto -webkit-focus-ring-color;
+                outline-offset: -2px;
+            }
+
+        @font-face {
+            font-family: 'Code128';
+            src: url('MISC/Bh128ab.woff2') format('woff2'), url('MISC/Bh128ab.woff') format('woff');
+        }
+
+        .barcode {
+            /* Use the name of the face that is installed, or the one you defined above */
+            font-family: 'Code128';
+        }
+    </style>
+
+
+    <script language="javascript" type="text/javascript">
+        // <!CDATA[
+		 // this is edited
+        function bPrint_onclick() {
+
+            actioner = document.form1.actioner.value;
+            passport = document.form1.passport.value;
+            casenum = document.form1.casenum.value;
+            father = document.form1.father.value;
+            fname = document.form1.fname.value;
+            lname = document.form1.lname.value;
+            idnum = document.form1.idnum.value;
+            kidomet = document.form1.kidomet.value;
+            phone = document.form1.phone.value;
+            bdate = document.form1.bdate.value;
+            gender = document.form1.gender.value;
+            age = document.form1.age.value;
+            address = document.form1.address.value;
+            ambulance = document.form1.ambulance.value;
+            etime1 = document.form1.etime1.value;
+            etime2 = document.form1.etime2.value;
+            edate = document.form1.edate.value;
+            type = document.form1.type.value;
+            reason = document.form1.reason.value;
+            coverage = document.form1.coverage.value;
+            koh = document.form1.koh.value;
+
+            var chkYes = document.getElementById("chkYes");
+            var chkNo = document.getElementById("chkNo");
+            var chkAmbulat = document.getElementById("chkAmbulat");
+            var chkMiun = document.getElementById("chkMiun");
+            dept_ishpuz = chkYes.checked ? document.form1.dept_ishpuz.value : "";
+            dept_miun = chkNo.checked ? document.form1.dept_miun.value : "";
+            dept_ambulat = chkAmbulat.checked ? document.form1.dept_ambulat.value : "";
+
+            dept = chkAmbulat.checked ? dept_ambulat : chkYes.checked ? dept_ishpuz : dept_miun;
+
+            ishpuz = chkYes.checked ? "אשפוז" : "";
+            miun = chkNo.checked ? "מיון" : "";
+            ambulat = chkAmbulat.checked ? "אמבולטורי" : "";
+
+
+            //actioner passport casenum father lname fname idnum kidomet phone bdate gender age address ambulance dept_miun dept_ishpuz etime edate type reason coverage koh
+            div1 = "<td align='right' style='  padding: 0 7 0 0; font-size:9.5px;'><pre><font face='Arial'>";
+            div1 += fname + "  " + lname + "</br>";
+            div1 += "<b> מ.ז.:  </b>" + idnum + "</br>";
+            div1 += "<span class='barcode' style='font-size:22px;'>" + casenum + "</span></br>";
+            div1 += dept + "   " + gender + "  " + age + "</br>";
+            div1 += "<font style='color: #ffffff; background-color: #000000'>" + "מדבקה זמנית" + "</font> </br>" + "</br>";
+            div1 += "</font></pre></td>";
+            ///////////
+
+            div2 = "<td align='right' style='  padding: 0 7 0 0; font-size:13px;'><pre><font face='Arial'>";
+            div2 += fname + "  " + lname + "</br>";
+            div2 += "<b> מ.ז.:  </b>" + idnum + "</br>";
+            div2 += dept + "  " + edate + "</br>";
+            div2 += "<span class='barcode' style='font-size:30px;'>" + casenum + "</span></br>";
+            div2 += "<font style='color: #ffffff; background-color: #000000; align:center;'>" + "מדבקה זמנית" + "</font> </br>";
+            div2 += "מרכז רפואי ברזילי" + "</br>";
+            div2 += "</br>";
+            div2 += "</br>";
+            div2 += "</font></pre></td>";
+            ///////////
+
+            div3 = "<td align='right' style=' width:100mm; padding: 6 10 0 0; font-size:13px; border:0; '><pre><font face='Arial'>";
+            div3 += miun + ishpuz + ambulat + ": " + dept + "   " + "<b>מקרה:  </b>" + casenum + "<b>  מפעיל:  </b>" + actioner + "</br>";
+            div3 += "<b>מ.ז.:  </b>" + idnum + "<b>   שם:  </b>" + fname + "  " + lname  + " " + age +"  <b>שם אב:  </b>" + father +  "</br>";
+            div3 += father + "  " + "<b> כתובת:  </b>" + address + "</br>";
+            div3 += "<b>סוג:  </b>" + type + "   " + "<b>תאריך לידה:  </b>" + bdate + "   " + gender + "</br>";
+            div3 += "<b>מס. דרכון: </b>" + passport + "  " + "<b>טלפון:  </b>" + kidomet + "-" + phone + "</br>";
+            div3 += "<b>קופח: </b>" + koh + "  " + "<b>כיסוי: </b>" + coverage + "<b>  תאריך קבלה: </b>" + edate + " " + etime2 + ":"+etime1 + "</br>";
+            div3 += "<b>הפניה: </b>" + reason + "   " + "<b>הגעה עם אמבולנס: </b>" + ambulance;
+            div3 += "</font></pre></td>";
+            ///////////
+
+            div4 = "<td style='border:0;'><pre><font face='Arial'>";
+            div4 += "<span class='barcode' style='font-size:40px;'>" + casenum + "</span>    ";
+            div4 += "<font style='color: #ffffff; background-color: #000000; align:center;'>" + "מדבקה זמנית" + "</font> </br></td>";
+
+            //////////////////////////////////////////////////////
+            var frame1 = document.createElement('iframe');
+            frame1.name = "frame1";
+            frame1.style.position = "absolute";
+            frame1.style.top = "-1000000px";
+            document.body.appendChild(frame1);
+            var frameDoc = (frame1.contentWindow) ? frame1.contentWindow : (frame1.contentDocument.document) ? frame1.contentDocument.document : frame1.contentDocument;
+            frameDoc.document.open();
+
+            // create document
+            frameDoc.document.write("<html><head><title></title>");
+            frameDoc.document.write("<style type='text/css' media='all'>");
+            frameDoc.document.write(" @font-face { font-family: 'Code128'; src: url('MISC/Bh128ab.woff2') format('woff2'), url('MISC/Bh128ab.woff') format('woff'); }");
+            frameDoc.document.write("  .barcode { font-family: 'Code128'; }");
+            frameDoc.document.write("  td { border: 0.5px solid #ccc; }");
+            frameDoc.document.write("  .floatbottom { position: fixed; bottom: 0; width: 100 %; }");
+            frameDoc.document.write("@page{size: auto; margin: 0mm;}");
+            frameDoc.document.write("</style></head><body class='floatbottom' style='-webkit-print-color-adjust: exact;'>");
+			frameDoc.document.write("<table width='100%' cellpadding='0' cellspacing='0' dir='rtl'><tr>");
+            frameDoc.document.write("<td colspan='3'><div></div></td></tr>");
+            frameDoc.document.write("<center><font size=+2>");
+            frameDoc.document.write("<table width='100%' cellpadding='0' cellspacing='0' dir='rtl'>");
+            frameDoc.document.write("<tr>" + div1 + div1 + div1 + "</tr>");
+            frameDoc.document.write("<tr>" + div2 + div2 + div2 + "</tr></table>");
+            frameDoc.document.write("</font></center>");
+            frameDoc.document.write("<table width='100%' cellpadding='0' cellspacing='0' dir='rtl'><tr>");
+            frameDoc.document.write("<td colspan='2'></td></tr>");
+            frameDoc.document.write("<center><font size=+2>");
+            frameDoc.document.write("<tr>" + div3 + "</tr>");
+            frameDoc.document.write("<tr>" + div4 + "</tr></table>");
+            frameDoc.document.write("</font></center>");
+            frameDoc.document.write("</body></html>");
+            frameDoc.document.body.style.margin = '0px';
+
+            frameDoc.document.close();
+            setTimeout(function () {
+                window.frames["frame1"].focus();
+                window.frames["frame1"].print();
+                document.body.removeChild(frame1);
+            }, 500);
+            return false;
+
+
+        }
+
+        function alternate_Depts() {
+
+            var chkYes = document.getElementById("chkYes");
+            var chkNo = document.getElementById("chkNo");
+            var dept_ishpuz = document.getElementById("dept_ishpuz");
+            dept_ishpuz.style.display = chkYes.checked ? "inline" : "none";
+            var dept_miun = document.getElementById("dept_miun");
+            dept_miun.style.display = chkNo.checked ? "inline" : "none";
+
+        }
+
+        function alternate_Title() {
+
+            var chkMiun = document.getElementById("chkMiun");
+            var chkAmbulat = document.getElementById("chkAmbulat");
+            var titleM = document.getElementById("titleM");
+            titleM.style.display = chkMiun.checked ? "block" : "none";
+            var titleA = document.getElementById("titleA");
+            titleA.style.display = chkAmbulat.checked ? "block" : "none";
+
+            document.getElementById("chkYes").checked = false;
+            document.getElementById("chkNo").checked = false;
+
+            alternate_Ambulat_Depts();
+        }
+        //////////////////////////////////////////////////
+        function alternate_Ambulat_Depts() {
+            var chkAmbulat = document.getElementById("chkAmbulat");
+            var dept_ambulat = document.getElementById("dept_ambulat");
+            dept_ambulat.style.display = chkAmbulat.checked ? "inline" : "none";
+
+            var radio_miun = document.getElementById("radio_miun");
+            radio_miun.style.display = chkAmbulat.checked ? "none" : "inline";
+
+
+            var dept_ishpuz = document.getElementById("dept_ishpuz");
+            dept_ishpuz.style.display = chkAmbulat.checked ? "none" : "none";
+            var dept_miun = document.getElementById("dept_miun");
+            dept_miun.style.display = chkAmbulat.checked ? "none" : "none";
+        }
+
+
+        function allLetter(inputtxt) {
+            var letters = /^[א-ת\s+]*$/i;
+            if (!inputtxt.value.match(letters)) {
+                inputtxt.value = "";
+                inputtxt.setAttribute('style', 'border: 3px solid red;');
+                document.getElementById("error_text").innerHTML = "יש להזין אותיות בעברית בלבד";
+            } else {
+                inputtxt.setAttribute('style', 'border: 3px solid #ccc;');
+                document.getElementById("error_text").innerHTML = "";
+            }
+        }
+
+        function allnumbers(inputtxt) {
+            var numbers = /^[0-9]*$/i;
+            if (!inputtxt.value.match(numbers)) {
+                inputtxt.value = "";
+                inputtxt.setAttribute('style', 'border: 3px solid red;');
+                document.getElementById("error_text").innerHTML = "יש להזין ספרות בלבד";
+            } else {
+                inputtxt.setAttribute('style', 'border: 3px solid #ccc; ');
+                document.getElementById("error_text").innerHTML = "";
+            }
+        }
+
+        function allnumbersphone(inputtxt) {
+            var numbers = /^[0-9]*$/i;
+            if (!inputtxt.value.match(numbers)) {
+                inputtxt.value = "";
+                inputtxt.setAttribute('style', 'border: 3px solid red; width: 60%;');
+                document.getElementById("error_text").innerHTML = "יש להזין ספרות בלבד";
+            } else {
+                inputtxt.setAttribute('style', 'border: 3px solid #ccc; width: 60%;');
+                document.getElementById("error_text").innerHTML = "";
+            }
+        }
+
+        function allnumbershour(inputtxt) {
+            //var numbers = /^[0-9]*$/i;
+            if (inputtxt.value > 24 || inputtxt.value < 0) {
+                inputtxt.value = "";
+                inputtxt.setAttribute('style', 'border: 3px solid red; width: 30%;');
+                document.getElementById("error_text").innerHTML = "יש להזין ספרות בלבד, בין 0-24";
+            } else {
+                inputtxt.setAttribute('style', 'border: 3px solid #ccc; width: 30%;');
+                document.getElementById("error_text").innerHTML = "";
+            }
+        }
+        function allnumbersminute(inputtxt) {
+            //var numbers = /^[0-9]*$/i;
+            if (inputtxt.value >= 60 || inputtxt.value < 0) {
+                inputtxt.value = "";
+                inputtxt.setAttribute('style', 'border: 3px solid red; width: 30%;');
+                document.getElementById("error_text").innerHTML = "יש להזין ספרות בלבד, בין 0-60";
+            } else {
+                inputtxt.setAttribute('style', 'border: 3px solid #ccc; width: 30%;');
+                document.getElementById("error_text").innerHTML = "";
+            }
+        }
+
+        // ]]>
+
+    </script>
+
+
+
+</head>
+<body style="background-image:linear-gradient(to bottom right, white, #017DC3);">
+
+    <img style="margin-left:5px; margin-top:5px; " src="MISC/Computer_Logo_border.png" alt="Barzi Comp Logo" />
+
+    <p id="titleM" style="font-size: 50px; color:#075CAA; text-align:center; padding: 0px; margin-top:0px; margin:2px;">קבלת מטופל למיון/אשפוז</p>
+    <p id="titleA" style="font-size: 50px; color:#b41b53; text-align:center; padding: 0px; margin-top:0px; margin:2px; display:none;">קבלת מטופל אמבולטורי</p>
+
+    <div style="align-content:center; text-align:center;">
+        <input type="radio" id="chkAmbulat" name="chkMA" onclick="alternate_Title()" />
+        <font face='Arial'>
+            <label for="chkAmbulat" style="font-size:20px; color:#075CAA;">מיון \ אשפוז</label>
+        </font>
+        <input type="radio" id="chkMiun" name="chkMA" onclick="alternate_Title()" checked />
+        <font face='Arial'>
+            <label for="chkMiun" style="font-size:20px; color:#b41b53;">אמבולטורי</label>
+        </font>
+
+    </div>
+
+    <div id="rcorners2" style="width:60%; height:80%; position:center; background-color:aliceblue; margin-left:20%;">
+
+        <form name="form1" style="align-content:center">
+
+            <table class="style1" style="align-content:center ; position:center;">
+                <tr>
+                    <td class="style3">
+                        מפעיל
+                    </td>
+                    <td class="style3">
+                        מס&#39; דרכון
+                    </td>
+                    <td class="style3">
+                        מס&#39; מקרה
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">
+                        <input id="actioner" type="text" class="style4" maxlength="30" onfocusout="allLetter(this)" />
+                    </td>
+                    <td style="text-align: right">
+                        <input id="passport" type="text" class="style4" maxlength="15" onfocusout="allnumbers(this)" />
+                    </td>
+                    <td style="text-align: right">
+                        <input id="casenum" type="text" class="style4" maxlength="15" onfocusout="allnumbers(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style3">
+                        שם אב
+                    </td>
+                    <td class="style3">
+                        שם פרטי
+                    </td>
+					 <td class="style3">
+                        שם משפחה
+                    </td>
+                    <td class="style3">
+                        ת. זהות
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td style="text-align: right">
+                        <input id="father" type="text" class="style4" maxlength="30" onfocusout="allLetter(this)" />
+                    </td>
+					<td style="text-align: right">
+                        <input id="fname" type="text" class="style4" maxlength="45" onfocusout="allLetter(this)" />
+                    </td>
+                    <td style="text-align: right">
+                        <input id="lname" type="text" class="style4" maxlength="30" onfocusout="allLetter(this)" />
+                    </td>
+                    <td style="text-align: right">
+                        <input id="idnum" type="text" class="style4" maxlength="9" onfocusout="allnumbers(this)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style3">
+                        טלפון
+                    </td>
+                    <td class="style3">
+                        תאריך לידה
+                    </td>
+                    <td class="style3">
+                        מין
+                    </td>
+                    <td class="style3">
+                        גיל
+                    </td>
+                </tr>
+
+                <tr>
+
+
+                    <td style="text-align: right">
+
+                        <input class="datalist" list="kidomets" style="width:25%" name="kidomet" id="kidomet" />
+                        <datalist id="kidomets">
+                            <option value=""></option>
+                            <option value="050">050</option>
+                            <option value="051">051</option>
+                            <option value="052">052</option>
+                            <option value="053">053</option>
+                            <option value="054">054</option>
+                            <option value="055">055</option>
+                            <option value="056">056</option>
+                            <option value="057">057</option>
+                            <option value="058">058</option>
+                            <option value="059">059</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="073">073</option>
+                            <option value="077">077</option>
+                        </datalist>
+
+                        <input style="width:60%" id="phone" type="text" class="style4" maxlength="10" onfocusout="allnumbersphone(this)" />
+                    </td>
+
+                    <td style="text-align: right">
+                        <input id="bdate" type="text" class="style4" />
+                    </td>
+                    <td style="text-align: right">
+                        <select id="gender" name="gender">
+							<option value=""></option>
+                            <option value="נקבה">נקבה</option>
+                            <option value="זכר">זכר</option>
+                            <option value="לא ידוע">לא ידוע</option>
+                        </select>
+                    </td>
+                    <td style="text-align: right">
+                        <input id="age" type="text" class="style4" maxlength="3" onfocusout="allnumbers(this)" />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="3" style="text-align: right">
+                        <input style="width:60%" id="address" type="text" class="style4" maxlength="40" />
+                    </td>
+                    <td class="style3">
+                        כתובת מגורים
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="style3">
+                        הגעה עם אמבולנס
+                    </td>
+                    <td class="style3">
+                        מחלקה
+                    </td>
+                    <td class="style3">
+                        שעה
+                    </td>
+                    <td class="style3">
+                        תאריך קבלה
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: right">
+                        <select id="ambulance" name="ambulance">
+							<option value=""></option>
+                            <option value="כן">כן</option>
+                            <option value="לא">לא</option>
+                        </select>
+                    </td>
+
+                    <td style="text-align: right">
+
+                        <input class="datalist" list="dept_miuns" style="width:45%; display:none;" name="dept_miun" id="dept_miun" />
+                        <datalist id="dept_miuns">
+                            <option value="option a">option a</option>
+                            <option value="option b">option b</option>
+                            <option value="option c">option c</option>
+                        </datalist>
+
+                        <input class="datalist" list="dept_ishpuzs" style="width:45%; display:none;" name="dept_ishpuz" id="dept_ishpuz" />
+                        <datalist id="dept_ishpuzs">
+                            <option value="option a">option a</option>
+                            <option value="option b">option b</option>
+                            <option value="option c">option c</option>
+                        </datalist>
+
+                        <input class="datalist" list="dept_ambulats" style="width:100%; display:none;" name="dept_ambulat" id="dept_ambulat" />
+                        <datalist id="dept_ambulats">
+                            <option value="option a">option a</option>
+                            <option value="option b">option b</option>
+                            <option value="option c">option c</option>
+
+                        </datalist>
+
+                        <div id="radio_miun" style="display:inline;">
+                            <input type="radio" id="chkYes" name="chkPassPort" onclick="alternate_Depts()" />
+                            <font face='Arial'>
+                                <label for="chkYes" style="font-size:12px">מיון</label>
+                            </font>
+                            <input type="radio" id="chkNo" name="chkPassPort" onclick="alternate_Depts()" />
+                            <font face='Arial'>
+                                <label for="chkNo" style="font-size:12px">אשפוז</label>
+                            </font>
+                        </div>
+
+                    </td>
+                    <td style="text-align: right">
+                        <input id="etime2" type="text" class="style4" maxlength="2" onfocusout="allnumbershour(this)" style="width:30%;"/>
+                    :
+                        <input id="etime1" type="text" class="style4" maxlength="2" onfocusout="allnumbersminute(this)" style="width:30%;"/>
+                    </td>
+
+                    <td style="text-align: right">
+                        <input id="edate" type="text" class="style4" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="style3">
+                        סוג
+                    </td>
+                    <td class="style3">
+                        הפניה
+                    </td>
+                    <td class="style3">
+                        כיסוי
+                    </td>
+                    <td class="style3">
+                        קופת חולים
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td style="text-align: right">
+                        <select id="type" name="type">
+							<option value=""></option>
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                        </select>
+                    </td>
+                    <td style="text-align: right">
+                        <select id="reason" name="reason">
+							<option value=""></option>
+                            <option value="כן">כן</option>
+                            <option value="לא">לא</option>
+                        </select>
+                    </td>
+                    <td style="text-align: right">
+                        <select id="coverage" name="coverage">
+							<option value=""></option>
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                        </select>
+                    </td>
+                    <td style="text-align: right">
+                        <select id="koh" name="koh">
+							<option value=""></option>
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td style="text-align: center">
+                        <input id="bClose" type="button" class="style3" value="סגור" onclick="window.close()" />
+                        <input id="bPrint" type="button" class="style3" value="הדפס" onclick="bPrint_onclick()" />
+                        <input id="bReset" type="reset" class="style3" value="ניקוי מסמך" />
+                    </td>
+
+                    <td style="text-align: center;">
+                        <output style="color: red;" name="error_text" id="error_text"></output>
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+</body>
+</html>
